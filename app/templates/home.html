@@ -1,5 +1,7 @@
- <h1>Bloc Chat</h1>
+<h1>Bloc Chat</h1>
 
- <h2 ng-repeat="room in home.rooms">
- {{ room.$id }}
- </h2>
+<button ng-click="home.addRoom()" class="btn btn-primary">New Room</button>
+
+<h2 ng-repeat="room in home.rooms">
+  {{ room.$value }}
+</h2>
