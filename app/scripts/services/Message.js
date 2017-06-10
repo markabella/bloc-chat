@@ -5,7 +5,7 @@
     var messages = $firebaseArray(ref);
     Message.all = messages;
 
-/**
+  /**
         username: "<USERNAME HERE>",
         content: "<CONTENT OF THE MESSAGE HERE>",
         sentAt: "<TIME MESSAGE WAS SENT HERE>",
