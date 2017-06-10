@@ -1,0 +1,22 @@
+.sidebar {
+    height: 100%;
+    width: 30%;
+    background-color: lightgrey;
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar p {
+cursor: pointer;
+}
+
+.main {
+    height: 100%;
+    width: 70%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+}
