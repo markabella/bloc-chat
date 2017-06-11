@@ -1,5 +1,5 @@
 <section class="sidebar">
-  <h1>Bloc Chat: {{ home.currentUser }}</h1>
+  <h1>Bloc Chat</h1>
   <button ng-click="home.addRoom()" class="btn btn-primary">New Room</button>
   <h3 ng-repeat="room in home.rooms">
     <p ng-click="home.setCurrentRoom(room)">{{ room.roomName }}</p>
@@ -7,10 +7,23 @@
 </section>
 
 <section class="main">
-  <h3>{{ home.currentRoom.roomName }}</h3>
+  <h1>{{ home.currentRoom.roomName }}: {{ home.currentUser }}</h1>
   <div ng-repeat="message in home.messages">
-    {{ message.username }}
-    {{ message.sentAt }}
-    <p>{{ message.content }}</p>
+    <div ng-if="$even" ng-style="{'background-color': 'lightgrey'}">
+      {{ message.username }}
+      {{ message.sentAt | date:'MM-dd-yyyy HH:mm:ss Z'}}
+      <p>{{ message.content }}</p>
+    </div>
+    <div ng-if="$odd">
+      {{ message.username }}
+      {{ message.sentAt | date:'MM-dd-yyyy HH:mm:ss Z'}}
+      <p>{{ message.content }}</p>
+    </div>
   </div>
+
+  <div class="message">
+    <input type="text" name="input" placeholder="Write your message here..." ng-model="home.message">
+    <button class="btn btn-primary" ng-click="home.sendMessage()">Send</button>
+  </div>
+
 </section>

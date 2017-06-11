@@ -5,12 +5,14 @@
     var messages = $firebaseArray(ref);
     Message.all = messages;
 
-  /**
-        username: "<USERNAME HERE>",
-        content: "<CONTENT OF THE MESSAGE HERE>",
-        sentAt: "<TIME MESSAGE WAS SENT HERE>",
-        roomId: "<ROOM UID HERE>"
-**/
+    Message.send = function (newMessage, currentUser, currentRoom) {
+      messages.$add({
+        'username': currentUser,
+        'content': newMessage,
+        'sentAt': firebase.database.ServerValue.TIMESTAMP,
+        'roomId': currentRoom.$id
+      });
+    };
 
     Message.getByRoomId = function(roomId) {
       // Filter the messages by their room ID.
