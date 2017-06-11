@@ -6,7 +6,8 @@
         // Modal configuration object properties
         templateUrl: '/templates/username-modal.html',
         controller: 'ModalCtrl as modal',
-        size: 'sm'
+        size: 'sm',
+        backdrop: 'static'
       });
     }
   }

@@ -10,7 +10,6 @@
       rooms.$add({'roomName': room});
     };
 
-
     return Room;
   }
 

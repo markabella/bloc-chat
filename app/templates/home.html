@@ -1,5 +1,6 @@
 <section class="sidebar">
   <h1>Bloc Chat</h1>
+  <p id="participantsOnline"></p>
   <button ng-click="home.addRoom()" class="btn btn-primary">New Room</button>
   <h3 ng-repeat="room in home.rooms">
     <p ng-click="home.setCurrentRoom(room)">{{ room.roomName }}</p>
